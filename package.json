@@ -7,7 +7,7 @@
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
     "lint": "eslint . --fix --ignore-path .gitignore",
-    "start": "npm run dev"
+    "start": "npm install && npm run dev"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
