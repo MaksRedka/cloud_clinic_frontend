@@ -120,7 +120,7 @@ onMounted(() => {
 });
 
 const saveChanges = () => {
-  userData.value.additionalInfo = {...editedData.value} | {30, 'City', 'male'};
+  userData.value.additionalInfo = editedData.value
   editMode.value = false;
 };
 
