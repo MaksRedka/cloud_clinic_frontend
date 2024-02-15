@@ -112,7 +112,7 @@ const userData = ref({
 
 const isDoctor = ref(true)
 const panels = ref([])
-const editedData = ref({});
+const editedData = ref({30, 'City', 'male'});
 const editMode = ref(false);
 
 onMounted(() => {
@@ -120,7 +120,7 @@ onMounted(() => {
 });
 
 const saveChanges = () => {
-  userData.value.additionalInfo = editedData.value
+  userData.value.additionalInfo = {...editedData.value};
   editMode.value = false;
 };
 
