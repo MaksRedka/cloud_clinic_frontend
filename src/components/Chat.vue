@@ -59,7 +59,7 @@ const messages = reactive([
 ]);
 
 const newMessage = ref('');
-const chatMessages = ref(null);
+const chatMessages = ref(undefined);
 
 const sendMessage = () => {
     if (newMessage.value.trim() === '') {
