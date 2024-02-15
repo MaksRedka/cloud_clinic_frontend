@@ -112,7 +112,7 @@ const userData = ref({
 
 const isDoctor = ref(true)
 const panels = ref([])
-const editedData = ref({30, 'City', 'male'});
+const editedData = ref({age:30, location: 'City', gender: 'male'});
 const editMode = ref(false);
 
 onMounted(() => {
