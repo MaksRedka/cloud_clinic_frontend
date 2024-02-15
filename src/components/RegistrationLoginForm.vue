@@ -106,7 +106,7 @@ const nameRules = [
 ];
 
 const emailRules = [
-  (value: string) => {
+  (value: string | undefined) => {
     if (value) {
       if (/.+@.+\..+/.test(value)) return true;
       return 'E-mail must be valid.';
