@@ -134,13 +134,13 @@ const formData = ref({
 });
 
 function logInRequestType() {
-  formData.value.formType = 'logIn' | NonNullable<"flat" | "text" | "elevated" | "tonal" | "outlined" | "plain" |>
+  formData.value.formType = 'logIn' | undefined
   logInBtn.value = 'flat'
   singUpBtn.value = 'tonal'
 }
 
 function signUpRequestType() {
-  formData.value.formType = 'signUp' | NonNullable<"flat" | "text" | "elevated" | "tonal" | "outlined" | "plain" |>
+  formData.value.formType = 'signUp' | undefined
   logInBtn.value = 'tonal'
   singUpBtn.value = 'flat'
 }
