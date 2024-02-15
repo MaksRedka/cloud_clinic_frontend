@@ -70,7 +70,7 @@ const sendMessage = () => {
     messages.push(message);
     newMessage.value = '';
     nextTick(() => {
-        const getChatMessages = chatMessages?.value?.$el?.scrollTop;
+        var getChatMessages = chatMessages?.value?.$el?.scrollTop;
         getChatMessages = chatMessages?.value?.$el?.scrollHeight;
     });
 
@@ -79,7 +79,7 @@ const sendMessage = () => {
 onMounted(() => {
     // Додаємо перші дані у чат при завантаженні компоненти
     nextTick(() => {
-        const getChatMessages = chatMessages?.value?.$el?.scrollTop;
+        var getChatMessages = chatMessages?.value?.$el?.scrollTop;
         getChatMessages = chatMessages?.value?.$el?.scrollHeight;
     });
 });
