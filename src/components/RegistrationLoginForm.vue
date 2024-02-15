@@ -3,8 +3,8 @@
     <v-container>
       <v-row>
         <v-col cols="12" class="d-flex justify-center">
-          <v-btn color="primary" class="w-25 rounded-e-0 " :variant="logInBtn" @click="logInRequestType">Log in</v-btn>
-          <v-btn color="primary" class="w-25 rounded-s-0 " :variant="singUpBtn" @click="signUpRequestType">Sign up
+          <v-btn color="primary" type="string" class="w-25 rounded-e-0 " :variant="logInBtn" @click="logInRequestType">Log in</v-btn>
+          <v-btn color="primary" type="string" class="w-25 rounded-s-0 " :variant="singUpBtn" @click="signUpRequestType">Sign up
           </v-btn>
         </v-col>
         <div class="w-100" v-if="logInBtn === 'flat'">
