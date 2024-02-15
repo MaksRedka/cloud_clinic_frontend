@@ -133,14 +133,14 @@ const formData = ref({
   isDoctor: false,
 });
 
-function logInRequestType(NonNullable<"flat" | "text" | "elevated" | "tonal" | "outlined" | "plain" | "string">) {
-  formData.value.formType = 'logIn'
+function logInRequestType() {
+  formData.value.formType = 'logIn' | NonNullable<"flat" | "text" | "elevated" | "tonal" | "outlined" | "plain" |>
   logInBtn.value = 'flat'
   singUpBtn.value = 'tonal'
 }
 
-function signUpRequestType(NonNullable<"flat" | "text" | "elevated" | "tonal" | "outlined" | "plain" | "string">) {
-  formData.value.formType = 'signUp'
+function signUpRequestType() {
+  formData.value.formType = 'signUp' | NonNullable<"flat" | "text" | "elevated" | "tonal" | "outlined" | "plain" |>
   logInBtn.value = 'tonal'
   singUpBtn.value = 'flat'
 }
