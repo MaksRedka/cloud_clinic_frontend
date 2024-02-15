@@ -70,7 +70,7 @@ const sendMessage = () => {
     messages.push(message);
     newMessage.value = '';
     nextTick(() => {
-        chatMessages.value.$el.scrollTop = chatMessages.value.$el.scrollHeight;
+        chatMessages?.value.$el.scrollTop = chatMessages?.value.$el.scrollHeight;
     });
 
 };
@@ -78,7 +78,7 @@ const sendMessage = () => {
 onMounted(() => {
     // Додаємо перші дані у чат при завантаженні компоненти
     nextTick(() => {
-        chatMessages.value.$el.scrollTop = chatMessages.value.$el.scrollHeight;
+        chatMessages?.value.$el.scrollTop = chatMessages?.value.$el.scrollHeight;
     });
 });
 </script>

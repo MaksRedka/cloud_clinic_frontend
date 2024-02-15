@@ -4,7 +4,7 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "strictNullChecks": false
+    "strictNullChecks": true
   },
   "include": ["vite.config.ts"]
 }
