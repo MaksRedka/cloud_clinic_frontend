@@ -2,9 +2,9 @@ const connectDB = require("./db");
 const express = require('express');
 const path = require('path');
 const serveStatic = require('serve-static');
-const session = require('express-session'),
-const passport = require('passport'),
-const localStrategy = require('passport-local').Strategy,
+const session = require('express-session');
+const passport = require('passport');
+const localStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 const app = express();
 
