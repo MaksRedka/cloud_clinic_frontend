@@ -62,8 +62,9 @@ app.post(
     })
 );
 
-app.get('/home', checkAuth(), (req, res) => {
+app.get('/', checkAuth(), (req, res) => {
     res.send("Home page. You're authorized.");
+    console.log(`calling checkAuth`);
 });
 
 app.listen(port, function () {
