@@ -1,1 +1,1 @@
-web: npm run start && npm run build && npm run dev
+web: ./node_modules/http-server/bin/http-server ./ -p $PORT
