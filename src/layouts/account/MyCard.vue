@@ -100,6 +100,8 @@ import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
 
 
+console.log('MYCARD.vue');
+
 const userData = ref({
   name: 'John Doe',
   email: 'john.doe@example.com',
