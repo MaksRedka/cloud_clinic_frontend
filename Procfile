@@ -1,2 +1,1 @@
-web: node server.js
-my-records: node my-records.js
+web: node server/server.js
