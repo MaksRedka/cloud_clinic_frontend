@@ -100,6 +100,8 @@ import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
 import {require} from "requirejs";
 
+const db = require("src/scripts/db");
+
 const userData = ref({
   name: 'John Doe',
   email: 'john.doe@example.com',
