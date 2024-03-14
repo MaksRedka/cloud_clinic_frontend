@@ -129,4 +129,4 @@ const cancelEdit = () => {
   editMode.value = false;
   editedData.value = {...userData.value.additionalInfo};
 };
-</script>
+</script>../../db
