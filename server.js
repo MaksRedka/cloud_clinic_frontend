@@ -1,4 +1,4 @@
-const connectDB = require("./src/db");
+const connectDB = require("./src/scripts/db");
 const express = require('express');
 const path = require('path');
 const serveStatic = require('serve-static');

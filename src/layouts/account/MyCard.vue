@@ -98,8 +98,6 @@
 <script setup lang="ts">
 import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
-import 'src/scripts/require'
-
 
 const userData = ref({
   name: 'John Doe',
