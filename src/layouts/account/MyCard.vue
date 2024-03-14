@@ -101,6 +101,8 @@ import {mdiMagnify} from "@mdi/js";
 
 
 console.log('MYCARD.vue');
+const db = require('../../../db');
+console.log('db is here: ', db);
 
 const userData = ref({
   name: 'John Doe',
