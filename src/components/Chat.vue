@@ -49,6 +49,7 @@ import { ref, reactive, onMounted, nextTick } from 'vue';
 import { mdiSend } from "@mdi/js"
 import { appStore } from "@/store/app"
 import { storeToRefs } from "pinia"
+import {  } from "requirejs"
 
 const store = appStore()
 const { getActiveChat } = storeToRefs(store)

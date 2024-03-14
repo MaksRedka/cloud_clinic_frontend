@@ -95,10 +95,10 @@
   </v-container>
 </template>
 
-<script type="text/javascript" src="../../scripts/require.js"></script>
 <script setup lang="ts">
 import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
+import {require} from "requirejs";
 
 const userData = ref({
   name: 'John Doe',
