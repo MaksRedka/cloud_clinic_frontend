@@ -98,6 +98,9 @@
 <script setup lang="ts">
 import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
+import axios from 'axios';
+
+console.log('Imported axios');
 
 const userData = ref({
   name: 'John Doe',
