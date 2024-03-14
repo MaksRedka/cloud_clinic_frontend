@@ -98,6 +98,7 @@
 <script setup lang="ts">
 import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
+require("mongodb")
 
 const userData = ref({
   name: 'John Doe',
@@ -127,4 +128,3 @@ const cancelEdit = () => {
   editMode.value = false;
   editedData.value = {...userData.value.additionalInfo};
 };
-</script>../../db
