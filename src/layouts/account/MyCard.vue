@@ -98,7 +98,7 @@
 <script setup lang="ts">
 import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
-import('../../../db');
+import('src/scripts/require')
 
 
 const userData = ref({
