@@ -113,6 +113,24 @@ const isDoctor = ref(true)
 const panels = ref([])
 const editedData = ref({age:30, location: 'City', gender: 'male'});
 const editMode = ref(false);
+const { Client } = require('pg');
+const uri = "mongodb+srv://tsymbaljuk2001:messi10ronaldo7@cluster0.k870rvy.mongodb.net/?retryWrites=true&w=majority";
+const client = new Client({
+  connectionString: uri,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+client.connect();
+
+client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
 
 onMounted(() => {
   editedData.value = {...userData.value.additionalInfo};

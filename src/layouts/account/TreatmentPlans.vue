@@ -173,13 +173,10 @@ import {ref} from 'vue';
 import {useDate} from 'vuetify'
 
 const adapter = useDate()
-
 const testDate = ref()
 const testDate2 = ref()
 const planType = ref('')
-
 const formVisible = ref(false);
-
 const isDoctor = ref(true); // Замініть це значення на вашу логіку перевірки, чи користувач - лікар
 const expandedPlanId = ref(null);
 const expandedPlanItem = ref(null);
