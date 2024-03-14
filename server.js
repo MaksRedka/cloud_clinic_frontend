@@ -1,4 +1,3 @@
-const connectDB = require("../cloud_clinic_frontend/src/scripts/db");
 const express = require('express');
 const path = require('path');
 const serveStatic = require('serve-static');
