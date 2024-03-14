@@ -14,7 +14,7 @@
     "@mdi/js": "^7.3.67",
     "@mdi/svg": "^7.3.67",
     "@types/react": "^18.2.55",
-    "axios": "^1.6.2",
+    "axios": "^1.6.7",
     "body-parser": "^1.20.2",
     "connect-flash": "^0.1.1",
     "cookie-session": "^2.1.0",
