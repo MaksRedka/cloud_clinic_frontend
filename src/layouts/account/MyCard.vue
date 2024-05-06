@@ -89,12 +89,20 @@
               <v-expansion-panel-text><strong>Активних планів немає</strong></v-expansion-panel-text>
             </div>
           </v-expansion-panel>
+          <v-expansion-panel>
+            <v-expansion-panel-title class="d-flex justify-space-between align-center">
+              Файли МРТ
+              <!--            <v-btn @click="editMode = true" v-if="!editMode">Edit</v-btn>-->
+            </v-expansion-panel-title>
+            <!--            <span class="headline">{{ userData.name }}</span>-->
+            <div class="d-flex justify-center">
+              <v-expansion-panel-text><strong>Файлів немає</strong></v-expansion-panel-text>
+            </div>
+          </v-expansion-panel>
         </v-expansion-panels>
       </v-col>
     </v-row>
   </v-container>
-  <div id="dwv">
-    </div>
 </template>
 
 <script setup lang="ts">
@@ -133,21 +141,6 @@ const cancelEdit = () => {
   editMode.value = false;
   editedData.value = {...userData.value.additionalInfo};
 };
-
-// create the first dwv app
-var dwvApp = new dwv.App();
-  // initialise app
-const viewConfig0 = new dwv.ViewConfig('layerGroup0');
-const viewConfig1 = new dwv.ViewConfig('"containerDivId": "dwv"');
-const viewConfigs = {'*': [viewConfig0, viewConfig1]};
-const options = new dwv.AppOptions(viewConfigs);
-
-dwvApp.init(options);
-dwvApp.loadURLs(["https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/gdcm-US-RGB-8-epicard.dcm"]);
-var range = document.getElementById("sliceRange");
-dwvApp.addEventListener("load-end", function() {
-  ;
-});
 
 methods: {
    async function sendData() {
