@@ -94,8 +94,7 @@
     </v-row>
   </v-container>
   <div id="dwv">
-    
-  </div>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -139,8 +138,8 @@ const cancelEdit = () => {
 var dwvApp = new dwv.App();
   // initialise app
 const viewConfig0 = new dwv.ViewConfig('layerGroup0');
-const viewConfigs = {'*': [viewConfig0, {"containerDivId": "dwv"},
-  {"tools": ['ZoomAndPan']}]};
+const viewConfig1 = new dwv.ViewConfig('"containerDivId": "dwv"');
+const viewConfigs = {'*': [viewConfig0, viewConfig1]};
 const options = new dwv.AppOptions(viewConfigs);
 
 dwvApp.init(options);
