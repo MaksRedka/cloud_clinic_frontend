@@ -102,7 +102,7 @@
 import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
 import axios from 'axios';
-import dwvVue from '../../dwv.vue'
+import dwvVue from '../../components/dwv.vue'
 
 console.log('Imported axios');
 
