@@ -93,16 +93,13 @@
       </v-col>
     </v-row>
   </v-container>
-  <div id="app">
-    <dwvVue />
-  </div>
 </template>
 
 <script setup lang="ts">
 import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
 import axios from 'axios';
-import dwvVue from '../../components/dwv.vue'
+import dwv = require('dwv');
 
 console.log('Imported axios');
 
@@ -134,6 +131,11 @@ const cancelEdit = () => {
   editMode.value = false;
   editedData.value = {...userData.value.additionalInfo};
 };
+
+// create the first dwv app
+var app = new dwv.App();
+app.init({dataViewConfigs: {'*': [{divId: 'layerGroup0'}]}});
+app.loadURLs(['https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/bbmri-53323851.dcm']);
 
 methods: {
    async function sendData() {
