@@ -88,20 +88,21 @@
             <div class="d-flex justify-center">
               <v-expansion-panel-text><strong>Активних планів немає</strong></v-expansion-panel-text>
             </div>
-            <div id="dwv">
-            <div id="layerGroup0"></div>
-            </div>
           </v-expansion-panel>
         </v-expansion-panels>
       </v-col>
     </v-row>
   </v-container>
+  <div id="app">
+    <dwvVue />
+  </div>
 </template>
 
 <script setup lang="ts">
 import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
 import axios from 'axios';
+import dwvVue from './components/dwv'
 
 console.log('Imported axios');
 
@@ -114,16 +115,6 @@ const userData = ref({
     gender: 'male'
   },
 });
-
-// create the dwv app
-var app = new dwv.App();
-// initialise with the id of the container div
-app.init({
-  dataViewConfigs: {'*': [{divId: 'layerGroup0'}]}
-});
-
-// load dicom data
-app.loadURLs(['https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/bbmri-53323851.dcm']);
 
 const isDoctor = ref(true)
 const panels = ref([])
