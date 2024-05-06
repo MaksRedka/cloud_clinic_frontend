@@ -93,7 +93,7 @@
       </v-col>
     </v-row>
   </v-container>
-  {{ dwvApp }}
+  {{ dwvApp.render }}
 </template>
 
 <script setup lang="ts">
