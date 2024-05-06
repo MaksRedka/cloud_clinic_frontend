@@ -96,7 +96,7 @@
             </v-expansion-panel-title>
             <!--            <span class="headline">{{ userData.name }}</span>-->
             <div class="d-flex justify-center">
-              <v-expansion-panel-text><strong>Файлів немає</strong></v-expansion-panel-text>
+              <v-file-input><strong>Файлів немає</strong></v-file-input>
             </div>
           </v-expansion-panel>
         </v-expansion-panels>
