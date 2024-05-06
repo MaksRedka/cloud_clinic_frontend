@@ -130,4 +130,20 @@ const cancelEdit = () => {
   editMode.value = false;
   editedData.value = {...userData.value.additionalInfo};
 };
+
+methods: {
+   async function sendData() {
+    console.log('XXX', 'this.email', 'this.address', 'this.gender');
+     console.log(await axios({
+      url: 'http://localhost:3000/api/records',
+       method: 'post',
+       data: {
+         name: 'this.name',
+         email: 'this.email',
+         address: 'this.address',
+         gender: 'this.gender'
+       }
+      }));
+  }
+}
 </script>
