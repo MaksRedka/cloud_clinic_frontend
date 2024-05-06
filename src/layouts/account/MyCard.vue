@@ -144,8 +144,11 @@ const options = new dwv.AppOptions(viewConfigs);
 
 dwvApp.init(options);
 dwvApp.loadURLs(["https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/gdcm-US-RGB-8-epicard.dcm"]);
+var range = document.getElementById("sliceRange");
+dwvApp.addEventListener("load-end", function() {
+  ;
+});
 
-  
 methods: {
    async function sendData() {
     console.log('XXX', 'this.email', 'this.address', 'this.gender');
