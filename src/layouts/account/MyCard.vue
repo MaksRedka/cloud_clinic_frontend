@@ -114,14 +114,17 @@ const userData = ref({
     gender: 'male'
   },
 });
+
 // create the dwv app
 var app = new dwv.App();
 // initialise with the id of the container div
 app.init({
   dataViewConfigs: {'*': [{divId: 'layerGroup0'}]}
 });
+
 // load dicom data
 app.loadURLs(['https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/bbmri-53323851.dcm']);
+
 const isDoctor = ref(true)
 const panels = ref([])
 const editedData = ref({age:30, location: 'City', gender: 'male'});
