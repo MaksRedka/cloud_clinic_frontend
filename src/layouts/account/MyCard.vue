@@ -96,7 +96,7 @@
             </v-expansion-panel-title>
             <!--            <span class="headline">{{ userData.name }}</span>-->
             <div class="d-flex justify-center">
-              <v-chip></v-chip>
+              <v-file-input multiple truncate-length="15"></v-file-input>
               <v-btn>Завантажити</v-btn>
             </div>
           </v-expansion-panel>
