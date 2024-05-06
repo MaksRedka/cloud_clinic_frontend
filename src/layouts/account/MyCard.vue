@@ -93,7 +93,9 @@
       </v-col>
     </v-row>
   </v-container>
-  {{ dwvApp.render }}
+  <div id="dwv">
+    
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -137,58 +139,13 @@ const cancelEdit = () => {
 var dwvApp = new dwv.App();
   // initialise app
 const viewConfig0 = new dwv.ViewConfig('layerGroup0');
-const viewConfigs = {'*': [viewConfig0]};
+const viewConfigs = {'*': [viewConfig0, {"containerDivId": "dwv"},
+  {"tools": ['ZoomAndPan']}]};
 const options = new dwv.AppOptions(viewConfigs);
+
 dwvApp.init(options);
-let nLoadItem = 0;
-let nReceivedLoadError = 0;
-let nReceivedLoadAbort = 0;
-let isFirstRender = false;
-dwvApp.addEventListener('loadstart', (/*event*/) => {
-  // reset flags
-  nLoadItem = 0;
-  nReceivedLoadError = 0;
-  nReceivedLoadAbort = 0;
-  isFirstRender = true;
-  // hide drop box
-});
-dwvApp.addEventListener('loadprogress', (event: ProgressEvent) => {
-  console.log('Loading')
-});
-dwvApp.addEventListener('renderend', (/*event*/) => {
-  console.log('Renderend')
-});
-dwvApp.addEventListener('load', (event: any) => {
-  // set dicom tags
-  event.metaData = dwvApp.getMetaData(event.loadid);
-  // set data loaded flag
-  event.dataLoaded = true;
-});
-dwvApp.addEventListener('loadend', (/*event*/) => {
-    alert('Received errors during load. Check log for details.');
-});
-dwvApp.addEventListener('loaditem', (/*event*/) => {
-  ++nLoadItem;
-});
-dwvApp.addEventListener('loaderror', (event: ErrorEvent) => {
-  console.error(event.error);
-  ++nReceivedLoadError;
-});
-dwvApp.addEventListener('loadabort', (/*event*/) => {
-  ++nReceivedLoadAbort;
-});
+dwvApp.loadURLs(["https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/gdcm-US-RGB-8-epicard.dcm"]);
 
-// handle key events
-dwvApp.addEventListener('keydown', (event: KeyboardEvent) => {
-    dwvApp.defaultOnKeydown(event);
-});
-// handle window resize
-window.addEventListener('resize', dwvApp.onResize);
-
-// setup drop box
-
-// possible load from location
-dwvApp.loadFromUri("https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/gdcm-US-RGB-8-epicard.dcm");
   
 methods: {
    async function sendData() {
