@@ -165,7 +165,6 @@ let nLoadItem = 0;
     });
     dwvApp.addEventListener('loadend', (/*event*/) => {
         alert('Received errors during load. Check log for details.');
-      }
     });
     dwvApp.addEventListener('loaditem', (/*event*/) => {
       ++nLoadItem;
