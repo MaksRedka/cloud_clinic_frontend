@@ -20,3 +20,15 @@ mongoose.connect(uri, { useNewUrlParser: true }).then(db => console.log('[OK] DB
 app.listen(port, function () {
     console.log(`Server listens http://cloud-clinic-123-7f92486a9893.herokuapp.com:${port}`);
 });
+
+// create the dwv app
+const app2 = new dwv.App();
+// initialise
+const viewConfig0 = new dwv.ViewConfig('layerGroup0');
+const viewConfigs = {'*': [viewConfig0]};
+const options = new dwv.AppOptions(viewConfigs);
+app2.init(options);
+// load dicom data
+app2.loadURLs([
+  'https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/bbmri-53323851.dcm'
+]);
