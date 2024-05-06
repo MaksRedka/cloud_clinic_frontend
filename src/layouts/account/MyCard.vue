@@ -132,72 +132,10 @@ const cancelEdit = () => {
   editedData.value = {...userData.value.additionalInfo};
 };
 
-var dicom_files = [
-  ["https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/gdcm-US-RGB-8-epicard.dcm", 
-  ],
-  ["https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/bbmri-53323851.dcm",],
-];
-
-// base function to get elements
-dwv.gui.getElement = dwv.gui.base.getElement;
-dwv.gui.displayProgress = function(percent) {};
-
-// create the dwv app
+// create the first dwv app
 var app = new dwv.App();
-// initialise with the id of the container div
-app.init({
-  "containerDivId": "dwv",
-  "tools": ['ZoomAndPan']
-});
-// load dicom data
-app.loadURLs(dicom_files[0]);
-
-var range = document.getElementById("sliceRange");
-range.min = 0;
-app.addEventListener("load-end", function() {
-  range.max = app.getImage().getGeometry().getSize().getNumberOfSlices() - 1;
-});
-app.addEventListener("slice-change", function() {
-  range.value = app.getViewController().getCurrentPosition().k;
-});
-range.oninput = function() {
-  var pos = app.getViewController().getCurrentPosition();
-  pos.k = this.value;
-  app.getViewController().setCurrentPosition(pos);
-}
-
-
-/*
-  Custom JS
-*/
-var actions = document.getElementById('actions');
-
-// Populate selector with data
-for (var i = 0; i < dicom_files.length; i++) {
-
-  // Create new button and append to actions div
-  let new_button = document.createElement('button');
-  new_button.setAttribute('data-file-index', i);
-  new_button.textContent = 'DICOM Files ' + (i + 1);
-
-  // Listener to dicom files selector
-  new_button.addEventListener('click', dicom_files_selected);
-
-  // Append child
-  actions.appendChild(new_button);
-}
-
-
-
-function dicom_files_selected(event) {
-  event.preventDefault();
-  var button = this;
-  var selected_index = parseInt(button.getAttribute('data-file-index'));
-  
-	app.abortLoad();
-	app.reset();
-  app.loadURLs(dicom_files[selected_index]);
-}
+app.init({dataViewConfigs: {'*': [{divId: 'layerGroupA'}]}});
+app.loadURLs(['https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/bbmri-53323851.dcm']);
 
 methods: {
    async function sendData() {
