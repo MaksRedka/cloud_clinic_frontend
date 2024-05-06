@@ -133,9 +133,12 @@ const cancelEdit = () => {
 };
 
 // create the first dwv app
-var app = new dwv.App();
-app.init({dataViewConfigs: {'*': [{divId: 'layerGroupA'}]}});
-app.loadURLs(['https://raw.githubusercontent.com/ivmartel/dwv/master/tests/data/bbmri-53323851.dcm']);
+var dwvApp = new dwv.App();
+  // initialise app
+const viewConfig0 = new dwv.ViewConfig('layerGroup0');
+const viewConfigs = {'*': [viewConfig0]};
+const options = new dwv.AppOptions(viewConfigs);
+dwvApp.init(options);
 
 methods: {
    async function sendData() {
