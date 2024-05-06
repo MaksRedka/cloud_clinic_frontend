@@ -91,13 +91,22 @@
           </v-expansion-panel>
           <v-expansion-panel>
             <v-expansion-panel-title class="d-flex justify-space-between align-center">
-              Файли МРТ
+              Завантажити Файли МРТ
               <!--            <v-btn @click="editMode = true" v-if="!editMode">Edit</v-btn>-->
             </v-expansion-panel-title>
             <!--            <span class="headline">{{ userData.name }}</span>-->
             <div class="d-flex justify-center">
               <v-file-input multiple truncate-length="15"></v-file-input>
               <v-btn>Завантажити</v-btn>
+            </div>
+          </v-expansion-panel>
+          <v-expansion-panel-title class="d-flex justify-space-between align-center">
+              Переглянути Файли МРТ
+              <!--            <v-btn @click="editMode = true" v-if="!editMode">Edit</v-btn>-->
+            </v-expansion-panel-title>
+            <!--            <span class="headline">{{ userData.name }}</span>-->
+            <div class="d-flex justify-center">
+              <v-btn>Переглянути</v-btn>
             </div>
           </v-expansion-panel>
         </v-expansion-panels>
