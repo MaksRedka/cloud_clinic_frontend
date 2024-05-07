@@ -97,7 +97,7 @@
             <!--            <span class="headline">{{ userData.name }}</span>-->
             <div class="d-flex justify-center">
               <v-file-input multiple truncate-length="15"></v-file-input>
-              <v-btn>Завантажити</v-btn>
+              <v-btn click="add_files_to_db">Завантажити</v-btn>
             </div>
           </v-expansion-panel>
           <v-expansion-panel>
@@ -166,6 +166,11 @@ methods: {
          gender: 'this.gender'
        }
       }));
+  
+   },
+
+  function add_files_to_db() {
+    console.log('Files to db');
   }
 }
 </script>
