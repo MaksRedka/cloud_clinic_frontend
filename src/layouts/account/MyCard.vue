@@ -167,9 +167,11 @@ methods: {
        }
       }));
   
-   },
+   }
+}
 
-  function add_files_to_db() {
+methods: {
+  async function add_files_to_db() {
     console.log('Files to db');
   }
 }
