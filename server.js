@@ -25,7 +25,7 @@ const userSchema = new mongoose.Schema({
     age: Number
   });
 
-const userModel = mongoose.model('User', userSchema);
+export const userModel = mongoose.model('User', userSchema);
 const Ivan = new userModel({ name: "Ivan", surname: "Pavlov", aftersurname: "Ivanovich", "date_birth": "19.04.2004", "age": "32"});
 
 console.log(Ivan.name);
