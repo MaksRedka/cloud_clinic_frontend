@@ -154,19 +154,21 @@ const cancelEdit = () => {
   editedData.value = {...userData.value.additionalInfo};
 };
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    surname: String,
-    aftersurname: String,
-    date_birth: String,
-    age: Number
-  });
+module.exports = mongoose => {
+  const Tutorial = mongoose.model(
+    "tutorial",
+    mongoose.Schema(
+      {
+        title: String,
+        description: String,
+        published: Boolean
+      },
+      { timestamps: true }
+    )
+  );
 
-const userModel = mongoose.model('User', userSchema);
-const Ivan = new userModel({ name: "Ivan", surname: "Pavlov", aftersurname: "Ivanovich", "date_birth": "19.04.2004", "age": "32"});
-
-const users = userModel.find();
-console.log('Users are : ', users);
+  return Tutorial;
+};
 
 methods: {
    async function sendData() {
