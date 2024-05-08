@@ -30,9 +30,9 @@ const Ivan = new userModel({ name: "Ivan", surname: "Pavlov", aftersurname: "Iva
 
 console.log(Ivan.name);
 
-await Ivan.save();
+Ivan.save();
 
-const users = await userModel.find();
+const users = userModel.find();
 
 console.log('Users are : ', users);
 
