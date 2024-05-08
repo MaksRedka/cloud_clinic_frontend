@@ -20,7 +20,7 @@ db = mongoose.connect(uri, { useNewUrlParser: true }).catch(err => console.error
 myDB = db.db("myDB");
 const myColl = myDB.collection("patient_data");
 const doc = { name: "Ivan", surname: "Ivanov", aftersurname: "Ivanovich", gener: "male", birth: "15.04.1992", age: "32" };
-const result = await myColl.insertOne(doc);
+const result = myColl.insertOne(doc);
 console.log(
    `A document was inserted with the _id: ${result.insertedId}`,
 );
