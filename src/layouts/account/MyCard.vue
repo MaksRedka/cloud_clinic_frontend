@@ -163,7 +163,7 @@ const userSchema = new mongoose.Schema({
   });
 
 const userModel = mongoose.model('User', userSchema);
-const Ivan = new userModel({ name: "Ivan", surname: "Pavlov", aftersurname: "Ivanovich", "date_birth": "19.04.2004", "age": "32"}).save();
+const Ivan = new userModel({ name: "Ivan", surname: "Pavlov", aftersurname: "Ivanovich", "date_birth": "19.04.2004", "age": "32"});
 
 const users = userModel.find();
 console.log('Users are : ', users);
