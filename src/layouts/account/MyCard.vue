@@ -121,7 +121,6 @@ import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
 import axios from 'axios';
 import dwv from "dwv";
-import mongoose from 'mongoose';
 
 console.log('Imported axios');
 
