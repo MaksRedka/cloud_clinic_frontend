@@ -121,6 +121,7 @@ import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
 import axios from 'axios';
 import dwv from "dwv";
+import userModel from "server"
 
 console.log('Imported axios');
 
@@ -169,5 +170,8 @@ methods: {
   
    }
 }
+
+const users = userModel.find();
+console.log(users);
 
 </script>
