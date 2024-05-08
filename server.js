@@ -17,6 +17,23 @@ const uri = "mongodb+srv://tsymbaljuk2001:messi10ronaldo7@cluster0.k870rvy.mongo
 
 mongoose.connect(uri, { useNewUrlParser: true }).catch(err => console.error(err));
 
+const userSchema = new mongoose.Schema({
+    name: String,
+    surname: String,
+    aftersurname: String,
+    date_birth: String,
+    age: Number
+  });
+
+const userModel = mongoose.model('User', userSchema);
+const Ivan = new userModel({ name: "Ivan", surname: "Pavlov", aftersurname: "Ivanovich", "date_birth": "19.04.2004", "age": "32"});
+
+console.log(Ivan.name);
+
+Ivan.save();
+
+const users = userModel.find();
+
 app.listen(port, function () {
     console.log(`Server listens http://cloud-clinic-123-7f92486a9893.herokuapp.com:${port}`);
 });

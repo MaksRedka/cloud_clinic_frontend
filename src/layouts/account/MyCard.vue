@@ -154,22 +154,6 @@ const cancelEdit = () => {
   editedData.value = {...userData.value.additionalInfo};
 };
 
-module.exports = mongoose => {
-  const Tutorial = mongoose.model(
-    "tutorial",
-    mongoose.Schema(
-      {
-        title: String,
-        description: String,
-        published: Boolean
-      },
-      { timestamps: true }
-    )
-  );
-
-  return Tutorial;
-};
-
 methods: {
    async function sendData() {
     console.log('XXX', 'this.email', 'this.address', 'this.gender');
