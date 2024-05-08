@@ -121,7 +121,7 @@ import {ref, onMounted} from 'vue';
 import {mdiMagnify} from "@mdi/js";
 import axios from 'axios';
 import dwv from "dwv";
-import  { userModel } from "../../../server"
+const mongoose = require('mongoose');
 
 console.log('Imported axios');
 
@@ -154,6 +154,24 @@ const cancelEdit = () => {
   editedData.value = {...userData.value.additionalInfo};
 };
 
+const userSchema = new mongoose.Schema({
+    name: String,
+    surname: String,
+    aftersurname: String,
+    date_birth: String,
+    age: Number
+  });
+
+const userModel = mongoose.model('User', userSchema);
+const Ivan = new userModel({ name: "Ivan", surname: "Pavlov", aftersurname: "Ivanovich", "date_birth": "19.04.2004", "age": "32"});
+
+console.log(Ivan.name);
+
+Ivan.save();
+
+const users = userModel.find();
+console.log('Users are : ', users);
+
 methods: {
    async function sendData() {
     console.log('XXX', 'this.email', 'this.address', 'this.gender');
@@ -167,11 +185,7 @@ methods: {
          gender: 'this.gender'
        }
       }));
-  
    }
 }
-
-const users = userModel.find();
-console.log(users);
 
 </script>
