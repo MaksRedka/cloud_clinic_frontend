@@ -97,7 +97,7 @@
             <!--            <span class="headline">{{ userData.name }}</span>-->
             <div class="d-flex justify-center">
               <v-file-input multiple truncate-length="15"></v-file-input>
-              <v-btn click="add_files_to_db">Завантажити</v-btn>
+              <button>Завантажити</button>
             </div>
           </v-expansion-panel>
           <v-expansion-panel>
@@ -170,9 +170,4 @@ methods: {
    }
 }
 
-methods: {
-  async function add_files_to_db() {
-    console.log('Files to db');
-  }
-}
 </script>
