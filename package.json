@@ -6,8 +6,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore",
-    "start": "node server.js"
+    "lint": "eslint . --fix --ignore-path .gitignore"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
@@ -36,12 +35,13 @@
     "pinia": "^2.0.0",
     "r": "^0.0.5",
     "react": "^18.2.0",
+    "react-router-dom": "^6.23.0",
     "requirejs": "^2.3.6",
     "roboto-fontface": "*",
     "rollup": "^4.13.0",
     "sequelize": "^6.37.1",
     "vue": "^3.2.0",
-    "vue-router": "^4.0.0",
+    "vue-router": "^4.3.2",
     "vuetify": "^3.5.4"
   },
   "devDependencies": {
