@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import Chat from '@/components/Chat.vue';
 import {mdiChat} from "@mdi/js";
-import { appStore } from "@/store/app"
+import { appStore } from "../../store/app"
 import { storeToRefs } from "pinia"
 
 const store = appStore()

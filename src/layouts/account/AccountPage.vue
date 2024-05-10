@@ -39,7 +39,7 @@ import { mdiChat, mdiCard, mdiAccountMultiple, mdiBell} from "@mdi/js"
 import MyCard from "./MyCard.vue"
 import TreatmentPlans from "./TreatmentPlans.vue"
 import Chats from  "./Chats.vue"
-import { appStore } from "@/store/app"
+import { appStore } from "../../store/app"
 import { storeToRefs } from "pinia"
 import Notifications from "@/components/Notifications.vue";
 

@@ -11,9 +11,9 @@ import App from './App.vue'
 import { createApp } from 'vue'
 
 // Plugins
-import { registerPlugins } from '@/plugins'
-import router from "@/router";
-import { appStore } from "@/store/app"
+import { registerPlugins } from './plugins'
+import router from "./router";
+import { appStore } from "./store/app"
 
 
 const app = createApp(App)

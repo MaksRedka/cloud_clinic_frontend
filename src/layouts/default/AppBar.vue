@@ -27,7 +27,7 @@ import {mdiHospital} from '@mdi/js'
 import RegistrationLoginForm from "@/components/RegistrationLoginForm.vue";
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
-import { appStore } from "@/store/app"
+import { appStore } from "../../store/app"
 import { storeToRefs } from "pinia"
 
 const store = appStore()

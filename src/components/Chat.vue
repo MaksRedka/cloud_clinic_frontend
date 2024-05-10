@@ -47,7 +47,7 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted, nextTick } from 'vue';
 import { mdiSend } from "@mdi/js"
-import { appStore } from "@/store/app"
+import { appStore } from "../store/app"
 import { storeToRefs } from "pinia"
 import {  } from "requirejs"
 

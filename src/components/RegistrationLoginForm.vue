@@ -83,7 +83,7 @@
 
 <script setup lang="ts">
 import {ref, computed} from "vue";
-import {appStore} from "@/store/app"
+import {appStore} from "../store/app"
 import {storeToRefs} from "pinia"
 import {useRouter} from "vue-router";
 import { mdiEyeOff, mdiEye } from "@mdi/js";
